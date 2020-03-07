@@ -82,11 +82,11 @@ class NeuralNetwork(object):
         # TODO: Output error - Replace this value with your calculations.
         error = y - final_outputs # Output layer error is the difference between desired target and actual output.
         
+        # TODO: Calculate the hidden layer's contribution to the error
+        hidden_error = np.matmul(output_error_term, self.weights_hidden_to_output)
         
         # TODO: Backpropagated error terms - Replace these values with your calculations.
         output_error_term = error * final_outputs * (1 - final_outputs)
-        # TODO: Calculate the hidden layer's contribution to the error
-        hidden_error = np.matmul(output_error_term, self.weights_hidden_to_output)
         
         hidden_error_term = hidden_error * hidden_outputs * (1 - hidden_outputs)
         
